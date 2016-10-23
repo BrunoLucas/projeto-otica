@@ -40,7 +40,7 @@ export class NovoClienteComponent implements OnInit {
     // check if model is valid
     // if valid, call API to save customer
     console.log(model, isValid);
-  let teste = JSON.stringify(model);
+    let teste = JSON.stringify(model);
     console.log('cadastrarCliente()');
     this.clienteService.cadastrarCliente(model).subscribe((data: Cliente) => {
       console.log('cadastrarCliente() ' + data);
