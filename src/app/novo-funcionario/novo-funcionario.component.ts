@@ -9,7 +9,7 @@ import { FuncionarioService } from '../services/funcionario/funcionario.service'
   styleUrls: ['./novo-funcionario.component.css'],
   providers: [FuncionarioService]
 })
-export class NovofuncionarioComponent implements OnInit {
+export class NovoFuncionarioComponent implements OnInit {
 
   public formfuncionario: FormGroup; // our model driven form
   public submitted: boolean; // keep track on whether form is submitted
