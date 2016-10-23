@@ -49,7 +49,7 @@ export class NovoFuncionarioComponent implements OnInit {
    setTimeout(function() {
        this.cadastrado = false;
        console.log('cadastro de funcionario: ' + this.cadastrado);
-       this.formfuncionario.reset();
+       this.formFuncionario.reset();
    }.bind(this), 3000);
 
     },
