@@ -67,7 +67,7 @@ export class NovaVendaComponent implements OnInit {
     this.itemCompraService.cadastrarItemCompra(this.itemCompra).subscribe((data: ItemCompra) => {
       console.log('adicionarItem() ' + data);
       this.listaDeItensCompra.push(data);//TODO continuar
-   this.itemAdicionado = true; 
+   this.itemAdicionado = true;   
    //wait 3 Seconds and hide
    setTimeout(function() {
        this.itemAdicionado = false;
