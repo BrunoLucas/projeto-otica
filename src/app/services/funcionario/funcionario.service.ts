@@ -46,10 +46,10 @@ export class FuncionarioService {
             .catch(this.handleError);
     }
 
-   public cadastrarFuncionario = (Funcionario): Observable<Funcionario> => {
-        let FuncionarioNovo = JSON.stringify(Funcionario);
+   public cadastrarFuncionario = (funcionario): Observable<Funcionario> => {
+        let funcionarioNovo = JSON.stringify(funcionario);
 
-        return this._http.post(this.actionUrl + "salvar/", FuncionarioNovo, { headers: this.headers })
+        return this._http.post(this.actionUrl + "salvar/", funcionarioNovo, { headers: this.headers })
             .map((response: Response) => <Funcionario>response.json())
             .catch(this.handleError);
     }
