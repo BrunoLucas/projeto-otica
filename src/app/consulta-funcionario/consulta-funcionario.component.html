@@ -1,0 +1,32 @@
+<div class="container">
+<form [formGroup]="formFuncionario"  (ngSubmit)="consultaFuncionario(formFuncionario.value, formFuncionario.valid)">
+  <div class="form-group">
+    <label for="nomeFuncionario">Nome</label>
+    <input type="text" formControlName="nome" class="form-control" id="nomeFuncionario"  placeholder="Nome do Funcionario">
+     <!--<span [hidden]="nome.valid"><b>Nome deve ter mais que 3 caracteres</b></span>-->
+  </div>
+  <div class="form-group">
+    <label for="cpfFuncionario">CPF</label>
+    <input type="text" formControlName="cpf" class="form-control" id="cpfFuncionario" placeholder="CPF do Funcionario">
+     <!--<span [hidden]="cpf.valid"><b>CPF deve ter mais que 10 caracteres</b></span>-->
+  </div>
+ 
+ <div >
+  <button type="submit" class="btn btn-primary">Consultar</button>
+  <button type="submit" class="btn btn-primary" routerLink = "novo-funcionario">Novo</button>
+ </div>
+       <!--<a routerLink="/Funcionario">Funcionarios</a>-->
+
+ <table class = "table">
+      <th>#</th>
+      <th>Nome</th>
+      <th>CPF</th>
+    <tr *ngFor="let funcionario of listaDeFuncionarios">
+          <td>{{ funcionario.codigo }}</td>
+          <td>{{ funcionario.nome }}</td>
+          <td>{{ funcionario.cpf }}</td>
+    </tr>
+</table>
+
+</form>
+</div>

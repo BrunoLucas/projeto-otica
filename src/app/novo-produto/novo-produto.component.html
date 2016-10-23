@@ -1,0 +1,33 @@
+<div class = "container"> 
+ <div class="alert alert-success" role="alert"  *ngIf="cadastrado" >
+  <strong>Produto cadastrado!</strong> O cadastro do produto foi concluído com sucesso
+</div>
+<form [formGroup]="formProduto" (ngSubmit)="cadastrarProduto(formProduto.value, formProduto.valid)">
+   <div class="form-group">
+    <label for="nomeCliente">Nome</label>
+    <input type="text" formControlName="nome" class="form-control" id="nomeCliente" placeholder="Informe o nome do cliente">
+  </div>
+  <!--<div class="form-group">
+    <label for="fornecedorProduto">Fornecedor</label>
+    <input type="text" class="form-control" id="fornecedorProduto"  placeholder="Informe o fornecedor">
+  </div>-->
+   <div class="form-group">
+    <label for="marcaProduto">Marca</label>
+    <input type="text" formControlName="marca" class="form-control" id="marcaProduto"  placeholder="Informe a marca">
+  </div>
+   <div class="form-group">
+    <label for="precoVendaProduto">Preço de venda</label>
+    <input type="decimal" formControlName="precoVenda" class="form-control" id="precoVendaProduto"  placeholder="Informe o preço de venda">
+  </div>
+     <div class="form-group">
+    <label for="precoCompraProduto">Preço de compra</label>
+    <input type="decimal" formControlName="precoCompra" class="form-control" id="precoCompraProduto"  placeholder="Informe o preço de compra">
+  </div>
+    
+   <div class="form-group">
+    <label for="quantidadeEstoqueProduto">Quantidade em estoque</label>
+    <input type="number" formControlName="quantidadeEstoque" class="form-control" id="quantidadeEstoqueProduto"  placeholder="Informe a quantidade em estoque">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>

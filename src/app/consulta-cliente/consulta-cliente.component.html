@@ -1,0 +1,32 @@
+<div class="container">
+<form [formGroup]="formCliente"  (ngSubmit)="consultaCliente(formCliente.value, formCliente.valid)">
+  <div class="form-group">
+    <label for="nomeCliente">Nome</label>
+    <input type="text" formControlName="nome" class="form-control" id="nomeCliente"  placeholder="Nome do cliente">
+     <!--<span [hidden]="nome.valid"><b>Nome deve ter mais que 3 caracteres</b></span>-->
+  </div>
+  <div class="form-group">
+    <label for="cpfCliente">CPF</label>
+    <input type="text" formControlName="cpf" class="form-control" id="cpfCliente" placeholder="CPF do cliente">
+     <!--<span [hidden]="cpf.valid"><b>CPF deve ter mais que 10 caracteres</b></span>-->
+  </div>
+ 
+ <div >
+  <button type="submit" class="btn btn-primary">Consultar</button>
+  <button type="submit" class="btn btn-primary" routerLink = "novo-cliente">Novo</button>
+ </div>
+       <!--<a routerLink="/cliente">Clientes</a>-->
+
+ <table class = "table">
+      <th>#</th>
+      <th>Nome</th>
+      <th>CPF</th>
+    <tr *ngFor="let cliente of listaDeClientes">
+          <td>{{ cliente.codigo }}</td>
+          <td>{{ cliente.nome }}</td>
+          <td>{{ cliente.cpf }}</td>
+    </tr>
+</table>
+
+</form>
+</div>

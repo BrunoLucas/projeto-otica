@@ -1,0 +1,9 @@
+· Tabela Usuário: Esta tabela tem como objetivo armazenar todos os usuários que farão uso do sistema. No caso especifico do PDV, serão os caixas que efetuarão login para realizar vendas aos clientes. Esta tabela tem vários campos como id do usuário, nome, login, senha (que será armazenada criptografada no banco), campo ativo para inativar o usuário caso seja necessário e data de cadastro.
+
+· Tabela Cliente: A venda de produtos no PDV só será permitida se for informado um cliente no ato da abertura da venda. Neste caso, esta tabela irá servir para o cadastro de clientes. Os campos desta tabela são auto descritivos e não necessitam de maiores detalhes.
+
+· Tabela Produto: Esta tabela tem como objetivo armazenar todos os produtos que poderão ser vendidos pela empresa. O campo id_produto irá armazenar o código identificador do produto (que será autogerado); o campo nome serve para informar a marca do produto e será apresentado na página no ato da venda; o campo descricao irá guardar um detalhamento maior sobre o produto; o campo imagem irá salvar a foto do produto na página; dentre outros.
+
+· Tabela Venda Cabeçalho: Esta tabela irá armazenar os dados das vendas realizadas, neste caso o código da venda, código do usuário caixa, código do cliente que realizou a compra, quantidade de itens vendidos, valor total da venda, status da venda (que pode ser finalizada, cancelada, em andamento e outros), e por fim a data e hora que ocorreu a venda.
+
+· Tabela Itens Venda: Esta tabela tem como objetivo gravar os dados de cada item vendido, este que representa um produto em especifico. Nesta tabela será armazenada a sequência de itens vendidos, valor unitário, subtotal e status do item vendido.
