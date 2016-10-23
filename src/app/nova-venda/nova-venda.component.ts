@@ -20,10 +20,10 @@ export class NovaVendaComponent implements OnInit {
   public events: any[] = []; // use later to display form changes
   cliente: Cliente;
   compra: Compra;
-  itemCompra : ItemCompra;
+  itemCompra : ItemCompra = new ItemCompra();
   cadastrado : boolean;
   listaDeItensCompra: any = [];
-
+  numeroCompra : number;
   constructor(private _fb: FormBuilder,
    private clienteService: ClienteService,
    private compraService: CompraService,
@@ -39,7 +39,28 @@ export class NovaVendaComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.compra = new Compra();
+    this.compra.valorTotal = 0.0;
+    this.compra.quantidadeItens = 0;
+    console.log('cadastrarCompra()');
+    this.compraService.cadastrarCompra(this.compra).subscribe((data: Compra) => {
+      console.log('cadastrarCompra() ' + data);
+      this.numeroCompra = data.codigo;
+      this.compra.codigo = this.numeroCompra;
+   //wait 3 Seconds and hide
+  //  setTimeout(function() {
+  //      this.cadastrado = false;
+  //      console.log('cadastro de cliente: ' + this.cadastrado);
+  //      this.formCliente.reset();
+  //  }.bind(this), 3000);
 
+    },
+      error => console.log(error),
+      () => console.log('Get all Items complete'));
+  }
+
+  adicionarItem(){
+    console.log('adicionarItem() => ' + this.itemCompra);
   }
 
 }
