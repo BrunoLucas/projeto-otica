@@ -24,6 +24,7 @@ export class NovaVendaComponent implements OnInit {
   cadastrado : boolean;
   listaDeItensCompra: any = [];
   numeroCompra : number;
+  itemAdicionado : boolean;
   constructor(private _fb: FormBuilder,
    private clienteService: ClienteService,
    private compraService: CompraService,
@@ -61,6 +62,22 @@ export class NovaVendaComponent implements OnInit {
 
   adicionarItem(){
     console.log('adicionarItem() => ' + this.itemCompra);
+    this.submitted = true; // set form submit to true
+
+    this.itemCompraService.cadastrarItemCompra(this.itemCompra).subscribe((data: ItemCompra) => {
+      console.log('adicionarItem() ' + data);
+      this.listaDeItensCompra.push(data);//TODO continuar
+   this.itemAdicionado = true;
+   //wait 3 Seconds and hide
+   setTimeout(function() {
+       this.itemAdicionado = false;
+   }.bind(this), 1000);
+
+    },
+      error => console.log(error),
+      () => console.log('Get all Items complete'));
+
+  
   }
 
 }
