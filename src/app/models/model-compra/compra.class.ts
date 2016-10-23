@@ -1,4 +1,4 @@
-export class Venda {
+export class Compra {
     
     codigo?: number;
     dataInicio: any; // required with minimum 5 chracters
