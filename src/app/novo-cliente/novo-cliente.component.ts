@@ -32,7 +32,7 @@ export class NovoClienteComponent implements OnInit {
 
   }
 
-  ngOnInit() { 
+  ngOnInit() {  
   }
 
   cadastrarCliente(model: Cliente, isValid: boolean) {
