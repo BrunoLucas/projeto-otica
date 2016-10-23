@@ -1,5 +1,8 @@
 <div class = "container"> 
-<form>
+   <div class="alert alert-success" role="alert"  *ngIf="cadastrado" >
+  <strong>Funcionário cadastrado!</strong> O cadastro do funcionário foi concluído com sucesso
+</div>
+<form [formGroup]="formFuncionario" (ngSubmit)="cadastrarFuncionario(formFuncionario.value, formFuncionario.valid)">
    <div class="form-group">
     <label for="nomeFuncionario">Nome</label>
     <input type="text" class="form-control" id="nomeFuncionario" placeholder="Informe o nome do Funcionario">

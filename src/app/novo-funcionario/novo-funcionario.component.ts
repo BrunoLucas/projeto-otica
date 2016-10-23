@@ -34,7 +34,7 @@ export class NovoFuncionarioComponent implements OnInit {
   ngOnInit() {
   }
 
-  cadastrarfuncionario(model: Funcionario, isValid: boolean) {
+  cadastrarFuncionario(model: Funcionario, isValid: boolean) {
     this.submitted = true; // set form submit to true
     // check if model is valid
     // if valid, call API to save customer
