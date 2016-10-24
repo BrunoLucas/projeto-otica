@@ -1,7 +1,7 @@
 export class Funcionario {
     
     codigo?: number;
-    nome: string; // required with minimum 5 chracters
+    nome: string; 
     cpf: number;
     identidade: number;
     sexo: string;
