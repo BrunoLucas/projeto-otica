@@ -1,7 +1,7 @@
 export class ItemCompra {
     
     codigo?: number;
-    codigoProduto: number; // required with minimum 5 chracters
+    codigoProduto: number; 
     codigoCompra: number;
     quantidade : number;
     valorUnitario : number;
