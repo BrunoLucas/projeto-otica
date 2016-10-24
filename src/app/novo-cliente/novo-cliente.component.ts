@@ -36,9 +36,7 @@ export class NovoClienteComponent implements OnInit {
   }
 
   cadastrarCliente(model: Cliente, isValid: boolean) {
-    this.submitted = true; // set form submit to true
-    // check if model is valid
-    // if valid, call API to save customer
+    this.submitted = true; 
     console.log(model, isValid);
     let teste = JSON.stringify(model);
     console.log('cadastrarCliente()');
