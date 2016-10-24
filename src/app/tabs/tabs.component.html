@@ -1,7 +1,6 @@
 
 <div (click)="$event.preventDefault()">
   <tabset [justified] = 'true'>
-    <!--<tab heading="Static title">Static content</tab>-->
     <tab *ngFor="let tabz of tabs"
          [heading]="tabz.title"
          [active]="tabz.active"
@@ -13,11 +12,6 @@
          [customClass]="tabz.customClass">
       {{tabz?.content}}
     </tab>
-    <!--<tab >
-      <template tabHeading>-->
-        <!--<i class="glyphicon glyphicon-bell"></i> Alert!-->
-      <!--</template>-->
-      <!--I've got an HTML heading, and a select callback. Pretty cool!-->
-    <!--</tab>--> 
+
   </tabset> 
 </div>
