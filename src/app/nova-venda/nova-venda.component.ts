@@ -48,13 +48,6 @@ export class NovaVendaComponent implements OnInit {
       console.log('cadastrarCompra() ' + data);
       this.numeroCompra = data.codigo;
       this.compra.codigo = this.numeroCompra;
-   //wait 3 Seconds and hide
-  //  setTimeout(function() {
-  //      this.cadastrado = false;
-  //      console.log('cadastro de cliente: ' + this.cadastrado);
-  //      this.formCliente.reset();
-  //  }.bind(this), 3000);
-
     },
       error => console.log(error),
       () => console.log('Get all Items complete'));
