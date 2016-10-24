@@ -10,9 +10,9 @@ import { ClienteService } from '../services/cliente/cliente.service';
 })
 export class ConsultaClienteComponent implements OnInit {
 
-  public formCliente: FormGroup; // our model driven form
-  public submitted: boolean; // keep track on whether form is submitted
-  public events: any[] = []; // use later to display form changes
+  public formCliente: FormGroup; 
+  public submitted: boolean; 
+  public events: any[] = []; 
   listaDeClientes: any = [];
   cliente: Cliente;
   constructor(private _fb: FormBuilder, private clienteService: ClienteService) {
