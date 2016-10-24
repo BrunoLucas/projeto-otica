@@ -14,10 +14,8 @@ export class ClienteService {
     private actionUrl: string;
     private headers: Headers;
 
-    // constructor(private _http: Http , private _configuration: Configuration) {
         constructor(private _http: Http) {
         console.log('Construtor de ClienteService');
-        //this.actionUrl = _configuration.ServerWithApiClienteUrl;
         this.actionUrl = "http://localhost:8080/OticaBarata/cliente/";
         this.headers = new Headers();
         this.headers.append('Content-Type', 'application/json');
