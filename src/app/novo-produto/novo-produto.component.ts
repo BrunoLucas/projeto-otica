@@ -11,9 +11,9 @@ import { ProdutoService } from '../services/produto/produto.service';
 
 })
 export class NovoProdutoComponent implements OnInit {
-  public formProduto: FormGroup; // our model driven form
-  public submitted: boolean; // keep track on whether form is submitted
-  public events: any[] = []; // use later to display form changes
+  public formProduto: FormGroup;
+  public submitted: boolean; 
+  public events: any[] = []; 
   produto: Produto;
   cadastrado: boolean;
   constructor(private _fb: FormBuilder, private produtoService: ProdutoService) {
