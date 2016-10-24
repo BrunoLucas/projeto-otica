@@ -43,7 +43,6 @@ export class NovoFuncionarioComponent implements OnInit {
       console.log('cadastrarfuncionario() ' + data);
 
    this.cadastrado = true;
-   //wait 3 Seconds and hide
    setTimeout(function() {
        this.cadastrado = false;
        console.log('cadastro de funcionario: ' + this.cadastrado);
