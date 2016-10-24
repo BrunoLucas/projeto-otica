@@ -31,10 +31,10 @@ export class NovoClienteComponent implements OnInit {
     });
 
   } 
- 
   ngOnInit() {  
   }
 
+  
   cadastrarCliente(model: Cliente, isValid: boolean) {
     this.submitted = true; 
     console.log(model, isValid);
