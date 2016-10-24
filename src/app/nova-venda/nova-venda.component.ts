@@ -17,7 +17,7 @@ export class NovaVendaComponent implements OnInit {
 
   public formCompra: FormGroup; // our model driven form
   public submitted: boolean; // keep track on whether form is submitted
-  public events: any[] = []; // use later to display form changes
+  public events: any[] = []; 
   cliente: Cliente;
   compra: Compra;
   itemCompra : ItemCompra = new ItemCompra();
