@@ -31,7 +31,8 @@ export class NovoClienteComponent implements OnInit {
     });
 
   } 
-
+ 
+ 
   ngOnInit() {  
   }
 
