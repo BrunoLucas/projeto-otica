@@ -11,7 +11,7 @@ import { ProdutoService } from '../services/produto/produto.service';
 })
 export class ConsultaProdutoComponent implements OnInit {
 
-  public formProduto: FormGroup; // our model driven form 
+  public formProduto: FormGroup; 
   listaDeProdutos: any = [];
   produto: Produto;
   constructor(private _fb: FormBuilder, private produtoService: ProdutoService) { 
