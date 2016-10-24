@@ -9,7 +9,6 @@ export class Funcionario {
     comissao : number;
 
     constructor (){
-
     }
 
 }
