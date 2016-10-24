@@ -55,7 +55,7 @@ export class NovaVendaComponent implements OnInit {
 
   adicionarItem(){
     console.log('adicionarItem() => ' + this.itemCompra);
-    this.submitted = true; // set form submit to true
+    this.submitted = true; 
 
     this.itemCompraService.cadastrarItemCompra(this.itemCompra).subscribe((data: ItemCompra) => {
       console.log('adicionarItem() ' + data);
