@@ -1,13 +1,13 @@
 export class Cliente {
     
     codigo?: number;
-    nome: string; // required with minimum 5 chracters
+    nome: string; 
     cpf: number;
     dataNascimento : any;
     observacao : string;
     endereco?: {
         codigo?: number;
-        logradouro?: string; // required
+        logradouro?: string; 
         numero?: number;
         complemento?: string;
         cep?: string;
