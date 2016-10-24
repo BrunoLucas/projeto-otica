@@ -24,9 +24,6 @@ import { NovoFuncionarioComponent } from './novo-funcionario/novo-funcionario.co
 import {SobreComponent} from './sobre/sobre.component';
 import { ContatoComponent } from './contato/contato.component';
 
-//import {ClienteService} from './services/cliente/cliente.service';
-
-//import {Ng2BootstrapModule} from 'ng2-bootstrap/ng2-bootstrap';
 
 const routes: Routes = [
 
