@@ -32,8 +32,7 @@ export class ConsultaProdutoComponent implements OnInit {
 
 
   consultaProduto(model: Produto, isValid: boolean) {
-    // check if model is valid
-    // if valid, call API to save customer
+
     console.log(model, isValid);
 
         console.log('consultaProduto()');
