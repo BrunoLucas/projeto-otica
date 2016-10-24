@@ -68,7 +68,6 @@ export class NovaVendaComponent implements OnInit {
       console.log('adicionarItem() ' + data);
       this.listaDeItensCompra.push(data);//TODO continuar
    this.itemAdicionado = true;   
-   //wait 3 Seconds and hide
    setTimeout(function() {
        this.itemAdicionado = false;
    }.bind(this), 1000);
