@@ -35,7 +35,7 @@ export class ConsultaClienteComponent implements OnInit {
       console.log('cliente: ' + i.nome);
     }
 
-  }
+  }  
  
   consultaCliente(model: Cliente, isValid: boolean) {
     this.submitted = true; 
