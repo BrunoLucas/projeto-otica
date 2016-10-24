@@ -1,7 +1,7 @@
 export class Produto {
     
     codigo? : number;
-    nome : string; // required with minimum 5 chracters
+    nome : string; 
 	marca : string;
     precoVenda : number;
 	precoCompra: number;
