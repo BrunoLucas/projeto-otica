@@ -30,7 +30,7 @@ export class NovoClienteComponent implements OnInit {
       'sexo': new FormControl()
     });
 
-  }
+  } 
 
   ngOnInit() {  
   }
