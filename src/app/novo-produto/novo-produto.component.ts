@@ -42,7 +42,6 @@ export class NovoProdutoComponent implements OnInit {
     this.produtoService.cadastrarProduto(model).subscribe((data: Produto) => {
       console.log('cadastrarProduto() ' + data);
    this.cadastrado = true;
-   //wait 3 Seconds and hide
    setTimeout(function() {
        this.cadastrado = false;
        console.log('cadastro de Produto: ' + this.cadastrado);
