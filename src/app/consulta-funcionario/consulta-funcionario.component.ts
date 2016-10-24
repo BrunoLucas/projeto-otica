@@ -10,9 +10,9 @@ import { FuncionarioService } from '../services/funcionario/funcionario.service'
 })
 export class ConsultaFuncionarioComponent implements OnInit {
 
-  public formFuncionario: FormGroup; // our model driven form
-  public submitted: boolean; // keep track on whether form is submitted
-  public events: any[] = []; // use later to display form changes
+  public formFuncionario: FormGroup;
+  public submitted: boolean; 
+  public events: any[] = []; 
   listaDeFuncionarios: any = [];
   Funcionario: Funcionario;
   constructor(private _fb: FormBuilder, private FuncionarioService: FuncionarioService) {
