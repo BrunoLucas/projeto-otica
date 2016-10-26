@@ -44,9 +44,9 @@ export class ItemCompraService {
     }
 
    public cadastrarItemCompra = (ItemCompra): Observable<ItemCompra> => {
-        let ItemCompraNovo = JSON.stringify(ItemCompra);
+        let itemCompraNovo = JSON.stringify(ItemCompra);
 
-        return this._http.post(this.actionUrl + "salvar/", ItemCompraNovo, { headers: this.headers })
+        return this._http.post(this.actionUrl + "salvar/", itemCompraNovo, { headers: this.headers })
             .map((response: Response) => <ItemCompra>response.json())
             .catch(this.handleError);
     }

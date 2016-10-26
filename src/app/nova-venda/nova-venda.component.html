@@ -10,7 +10,7 @@
   </div>
   <div class="form-group">
     <label for="codigoProduto">Produto</label>
-    <input type="text"  [(ngModel)]="itemCompra.codigo" class="form-control" id="codigoProduto"  placeholder="Código do produto">
+    <input type="text"  [(ngModel)]="itemCompra.produto.codigo" class="form-control" id="codigoProduto"  placeholder="Código do produto">
   </div>
   <div class="form-group">
     <label for="quantidadeProduto">Quantidade</label>
@@ -32,7 +32,7 @@
           <td>{{ item.produto.nome }}</td>
           <td>{{ item.quantidade }}</td>
           <td>{{ item.valorUnitario }}</td>
-          <td>{{ item.valorTotal }}</td>
+          <td>{{ item.subTotal }}</td>
     </tr>
 </table>
 

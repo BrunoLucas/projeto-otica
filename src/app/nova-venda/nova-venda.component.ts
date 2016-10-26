@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Cliente } from '../models/model-cliente/cliente.class';
 import {Compra} from '../models/model-compra/compra.class';
+import {Produto} from '../models/model-produto/produto.class';
 import {ItemCompra} from '../models/model-item-compra/item-compra.class';
 import { ClienteService } from '../services/cliente/cliente.service';
 import {CompraService} from '../services/compra/compra.service';
@@ -36,6 +37,8 @@ export class NovaVendaComponent implements OnInit {
       'codigoProduto': new FormControl(),
       'quantidadeItens': new FormControl()
     });
+    this.itemCompra.compra = new Compra();
+    this.itemCompra.produto = new Produto();
 
    }
 
@@ -48,6 +51,7 @@ export class NovaVendaComponent implements OnInit {
       console.log('cadastrarCompra() ' + data);
       this.numeroCompra = data.codigo;
       this.compra.codigo = this.numeroCompra;
+      this.itemCompra.compra.codigo = data.codigo;
     },
       error => console.log(error),
       () => console.log('Get all Items complete'));
