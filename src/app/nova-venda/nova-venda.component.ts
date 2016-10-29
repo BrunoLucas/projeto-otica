@@ -64,7 +64,13 @@ export class NovaVendaComponent implements OnInit {
     this.itemCompraService.cadastrarItemCompra(this.itemCompra).subscribe((data: ItemCompra) => {
       console.log('adicionarItem() ' + data);
       this.listaDeItensCompra.push(data);//TODO continuar
-   this.itemAdicionado = true;   
+   this.itemAdicionado = true;  
+   this.compra.valorTotal += data.subTotal; 
+   this.compra.quantidadeItens++;
+   this.compraService.cadastrarCompra(this.compra).subscribe((data : Compra) => {
+
+      
+   });
    setTimeout(function() {
        this.itemAdicionado = false;
    }.bind(this), 1000);
