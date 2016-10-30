@@ -26,6 +26,7 @@ export class NovaVendaComponent implements OnInit {
   listaDeItensCompra: any = [];
   numeroCompra : number;
   itemAdicionado : boolean;
+  finalizarCompra : boolean;
   constructor(private _fb: FormBuilder,
    private clienteService: ClienteService,
    private compraService: CompraService,
@@ -69,7 +70,7 @@ export class NovaVendaComponent implements OnInit {
    this.compra.quantidadeItens++;
    this.compraService.cadastrarCompra(this.compra).subscribe((data : Compra) => {
 
-      
+
    });
    setTimeout(function() {
        this.itemAdicionado = false;
@@ -81,5 +82,11 @@ export class NovaVendaComponent implements OnInit {
 
   
   }
+
+  iniciarFinalizarCompra(){
+      this.finalizarCompra = true;
+  }
+
+  
 
 }

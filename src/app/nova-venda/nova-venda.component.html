@@ -1,50 +1,72 @@
-<div class = "container"> 
-  <div class = "container"> 
-  <div class="alert alert-success" role="alert"  *ngIf="itemAdicionado" >
-  <strong>Item adicionado!</strong> O item foi concluído com sucesso
-</div>
-<!--<form >--> 
-   <div class="form-group">
-    <label for="codigoCompra">Nº compra:</label>
-    {{numeroCompra}}
-  </div>
-  <div class="form-group">
-    <label for="codigoProduto">Produto</label>
-    <input type="text"  [(ngModel)]="itemCompra.produto.codigo" class="form-control" id="codigoProduto"  placeholder="Código do produto">
-  </div>
-  <div class="form-group">
-    <label for="quantidadeProduto">Quantidade</label>
-    <input type="number"  [(ngModel)]="itemCompra.quantidade" class="form-control" id="quantidadeItens" >
-  </div>
+<div class="container">
+	<div class="container">
+		<div class="alert alert-success" role="alert" *ngIf="itemAdicionado">
+			<strong>Item adicionado!</strong> O item foi concluído com sucesso
+		</div>
+		<!--<form >-->
+		<div class="form-group">
+			<label for="codigoCompra">Nº compra:</label> {{numeroCompra}}
+		</div>
+		<div class="form-group">
+			<label for="codigoProduto">Produto</label>
+			<input type="text" [(ngModel)]="itemCompra.produto.codigo" class="form-control" id="codigoProduto" placeholder="Código do produto">
+		</div>
+		<div class="form-group">
+			<label for="quantidadeProduto">Quantidade</label>
+			<input type="number" [(ngModel)]="itemCompra.quantidade" class="form-control" id="quantidadeItens">
+		</div>
 
-  <button type="button" class="btn btn-lg  btn-primary" (click) = "adicionarItem()" >
+		<button type="button" class="btn btn-lg  btn-primary" (click)="adicionarItem()">
     Adicionar Item<span class="glyphicon glyphicon-plus"></span>
   </button>
 
- <table class = "table">
-      <th>#</th>
-      <th>Produto</th>
-      <th>Quantidade</th>
-      <th>Valor Unidade</th>
-      <th>Valor Total</th>
-    <tr *ngFor="let item of listaDeItensCompra">
-          <td>{{ item.codigo }}</td>
-          <td>{{ item.produto.nome }}</td>
-          <td>{{ item.quantidade }}</td>
-          <td>{{ item.valorUnitario }}</td>
-          <td>{{ item.subTotal }}</td>
-    </tr>
-</table>
+		<table class="table">
+			<th>#</th>
+			<th>Produto</th>
+			<th>Quantidade</th>
+			<th>Valor Unidade</th>
+			<th>Valor Total</th>
+			<tr *ngFor="let item of listaDeItensCompra">
+				<td>{{ item.codigo }}</td>
+				<td>{{ item.produto.nome }}</td>
+				<td>{{ item.quantidade }}</td>
+				<td>{{ item.valorUnitario }}</td>
+				<td>{{ item.subTotal }}</td>
+			</tr>
+		</table>
 
-  <legend></legend>
-  <!--<div class="form-group">
+		<legend></legend>
+		<!--<div class="form-group">
     <h3>Sub-total: R$</h3>
     
   </div>-->
- <div class="form-group">
-    <h2>Total: R${{compra.valorTotal}}</h2>
-        <h2></h2>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-<!--</form>-->
-</div>
+
+		<div class="form-group">
+			<h2>Total: R${{compra.valorTotal}}</h2>
+			<h2></h2>
+		</div>
+
+		<legend></legend>
+
+		<div class="form-group">
+			<label for="codigoProduto">Forma de pagamento</label>
+			<div class="radio">
+				<label><input type="radio" name="formaPagamento">Dinheiro</label>
+			</div>
+			<!--<div class="radio">
+				<label><input type="radio" name="optradio">Option 2</label>
+			</div>
+			<div class="radio ">
+				<label><input type="radio" name="optradio" disabled>Option 3</label>
+			</div>-->
+		</div>
+    	<div class="form-group">
+			<label for="quantidadeProduto">Cliente</label>
+			<input type="number" [(ngModel)]="itemCompra.quantidade" class="form-control" id="quantidadeItens">
+		</div>
+		<legend></legend>
+
+		<button type="button" (click)="iniciarFinalizarCompra()" data-toggle="modal modal-concluir-compra" data-target="#modal-concluir-compra"
+			class="btn btn-primary">Submit</button>
+		<!--</form>-->
+	</div>
