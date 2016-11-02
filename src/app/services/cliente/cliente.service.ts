@@ -52,8 +52,9 @@ export class ClienteService {
             .catch(this.handleError);
     }
 
-    public GetSingle = (id: number): Observable<Cliente> => {
-        return this._http.get(this.actionUrl + id)
+    public getSingle = (id: number): Observable<Cliente> => {
+        return this._http.get(this.actionUrl + "obterCliente/?id=" + id,
+        new Headers({'Content-Type' : 'application/json', 'Accept' : 'application/json'}))
             .map((response: Response) => <Cliente>response.json())
             .catch(this.handleError);
     }

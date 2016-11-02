@@ -47,6 +47,8 @@ export class NovaVendaComponent implements OnInit {
     this.compra = new Compra();
     this.compra.valorTotal = 0.0;
     this.compra.quantidadeItens = 0;
+    this.compra.status = 0;
+    this.compra.formaPagamento = null;
     console.log('cadastrarCompra()');
     this.compraService.cadastrarCompra(this.compra).subscribe((data: Compra) => {
       console.log('cadastrarCompra() ' + data);
@@ -61,13 +63,17 @@ export class NovaVendaComponent implements OnInit {
   adicionarItem(){
     console.log('adicionarItem() => ' + this.itemCompra);
     this.submitted = true; 
-
+    //this.itemCompra.compra.valorTotal = this.compra.valorTotal;
     this.itemCompraService.cadastrarItemCompra(this.itemCompra).subscribe((data: ItemCompra) => {
       console.log('adicionarItem() ' + data);
       this.listaDeItensCompra.push(data);//TODO continuar
    this.itemAdicionado = true;  
    this.compra.valorTotal += data.subTotal; 
    this.compra.quantidadeItens++;
+
+   if(this.compra.formaPagamento != undefined && this.compra.formaPagamento != null){
+     this.compra.formaPagamento = Number(this.compra.formaPagamento);
+   }
    this.compraService.cadastrarCompra(this.compra).subscribe((data : Compra) => {
 
 

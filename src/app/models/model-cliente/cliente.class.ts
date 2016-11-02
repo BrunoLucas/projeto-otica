@@ -4,6 +4,8 @@ export class Cliente {
     nome: string; 
     cpf: number;
     dataNascimento : any;
+    telefone : number;
+    sexo : string;
     observacao : string;
     endereco?: {
         codigo?: number;

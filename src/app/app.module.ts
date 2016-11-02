@@ -23,6 +23,7 @@ import { ConsultaFuncionarioComponent } from './consulta-funcionario/consulta-fu
 import { NovoFuncionarioComponent } from './novo-funcionario/novo-funcionario.component';
 import {SobreComponent} from './sobre/sobre.component';
 import { ContatoComponent } from './contato/contato.component';
+import { AlteraClienteComponent } from './altera-cliente/altera-cliente.component';
 
 
 const routes: Routes = [
@@ -74,6 +75,10 @@ const routes: Routes = [
    {
     path: 'contato',
     component: ContatoComponent 
+  },
+   {
+    path: 'cliente/alterar-cliente/:id',
+    component: AlteraClienteComponent 
   }
 
 
@@ -94,7 +99,8 @@ const routes: Routes = [
     ConsultaFuncionarioComponent,
     NovoFuncionarioComponent,
     SobreComponent,
-    ContatoComponent
+    ContatoComponent,
+    AlteraClienteComponent
     
   ],  
   imports: [

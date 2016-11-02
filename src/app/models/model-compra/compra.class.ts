@@ -4,9 +4,10 @@ export class Compra {
     dataInicio: any; 
     dataFim: any;
     quantidadeItens : any;
-    status : string;
     valorTotal?: number;
     codigoCliente: number;
+    status: any;
+    formaPagamento: number;
 
     constructor (){
 

@@ -1,0 +1,42 @@
+<div class = "container"> 
+  <div class="alert alert-success" role="alert"  *ngIf="cadastrado" >
+  <strong>Cliente alterado!</strong> A alteração do cliente foi concluída com sucesso
+</div>
+
+<form [formGroup]="formCliente" (ngSubmit)="alterarCliente(formCliente.value, formCliente.valid)">
+   <div class="form-group">
+    <label for="nomeCliente">Nome</label>
+    <input type="text"  formControlName="nome" class="form-control" id="nomeCliente" placeholder="Informe o nome do cliente">
+    <!--<span [hidden]="nome.valid"><b>Nome é obrigatório</b></span>-->
+  </div>
+   <div class="form-group">
+    <label for="cpfCliente">CPF</label>
+    <input type="text" formControlName="cpf" class="form-control" id="cpfCliente" placeholder="Informe o CPF do cliente">
+    <!--<span [hidden]="nome.valid"><b>Nome é obrigatório</b></span>-->
+  </div>
+  <div class="form-group">
+    <label for="telefoneCliente">Telefone</label>
+    <input type="number" formControlName="telefone" class="form-control" id="telefoneCliente" placeholder="Telefone do cliente">
+  </div>
+  <div class="form-group">
+    <label for="exampleTextarea">Observações</label>
+    <textarea formControlName="observacao" class="form-control" id="exampleTextarea" rows="3"></textarea>
+  </div>
+  <legend>Sexo</legend>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="radio" formControlName="sexo" class="form-check-input" name="sexo" id="optionsRadios1" value="F" checked>
+       Feminino
+      </label>
+    </div>
+    <div class="form-check">
+    <label class="form-check-label">
+        <input type="radio" formControlName="sexo" class="form-check-input" name="sexo" id="optionsRadios2" value="M">
+        Masculino
+      </label>
+    </div>
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>

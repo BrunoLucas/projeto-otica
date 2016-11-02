@@ -59,6 +59,10 @@ export class ConsultaClienteComponent implements OnInit {
 
   }
 
+  iniciarAlteracaoCliente(codigoCliente : number){
+    
+  }
+
   private listarClientes(): void {
 
     console.log('listarClientes()');
