@@ -10,9 +10,9 @@ import { ClienteService } from '../services/cliente/cliente.service';
 })
 export class ConsultaClienteComponent implements OnInit {
 
-  public formCliente: FormGroup; 
-  public submitted: boolean; 
-  public events: any[] = []; 
+  public formCliente: FormGroup;
+  public submitted: boolean;
+  public events: any[] = [];
   listaDeClientes: any = [];
   cliente: Cliente;
   constructor(private _fb: FormBuilder, private clienteService: ClienteService) {
@@ -35,19 +35,19 @@ export class ConsultaClienteComponent implements OnInit {
       console.log('cliente: ' + i.nome);
     }
 
-  }  
- 
+  }
+
   consultaCliente(model: Cliente, isValid: boolean) {
-    this.submitted = true; 
+    this.submitted = true;
     console.log(model, isValid);
 
-        console.log('consultaCliente()');
-     this.clienteService
+    console.log('consultaCliente()');
+    this.clienteService
       .listaClientesPorNomeCPF(model)
       .subscribe((data: Cliente[]) => {
         console.log('consultaCliente() ' + data);
 
-         this.listaDeClientes =  data ;
+        this.listaDeClientes = data;
         console.log('consultaCliente() => ' + this.listaDeClientes);
         for (let i = 0; i < this.listaDeClientes.length; i++) {
           console.log('cliente: ' + this.listaDeClientes[i].nome);
@@ -59,8 +59,37 @@ export class ConsultaClienteComponent implements OnInit {
 
   }
 
-  iniciarAlteracaoCliente(codigoCliente : number){
-    
+  iniciarAlteracaoCliente(codigoCliente: number) {
+
+  }
+
+  deletarCliente(codigo: number) {
+    let result = confirm('deletar: ' + codigo);
+
+    // alert('true ' + result);
+    // alert('false ' + result);
+
+    if (result === true) {
+
+
+      this.submitted = true;
+      console.log('deletarCliente()');
+      this.clienteService.delete(codigo)
+      .subscribe(() => {
+        console.log('deletarCliente() ' + codigo);
+        this.listarClientes();
+        setTimeout(function () {
+          this.cadastrado = false;
+          console.log('delete de cliente: ' + this.cadastrado);
+          this.formCliente.reset();
+        }.bind(this), 3000);
+
+      },
+        error => console.log(error),
+        () => console.log('Get all Items complete'));
+
+
+    }
   }
 
   private listarClientes(): void {
@@ -71,7 +100,7 @@ export class ConsultaClienteComponent implements OnInit {
       .subscribe((data: Cliente[]) => {
         console.log('listaClientes() ' + data);
 
-         this.listaDeClientes =  data ;
+        this.listaDeClientes = data;
         console.log('listaDeClientes() => ' + this.listaDeClientes);
         for (let i = 0; i < this.listaDeClientes.length; i++) {
           console.log('cliente: ' + this.listaDeClientes[i].nome);
@@ -81,6 +110,8 @@ export class ConsultaClienteComponent implements OnInit {
       error => console.log(error),
       () => console.log('Get all Items complete'));
   }
+
+
 
 
 }

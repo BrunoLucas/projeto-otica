@@ -79,6 +79,10 @@ const routes: Routes = [
    {
     path: 'cliente/alterar-cliente/:id',
     component: AlteraClienteComponent 
+  },
+   {
+    path: 'cliente/deletar-cliente/:id',
+    component: AlteraClienteComponent 
   }
 
 

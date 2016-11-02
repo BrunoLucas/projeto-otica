@@ -59,6 +59,12 @@ export class ClienteService {
             .catch(this.handleError);
     }
 
+      public delete = (id: number): Observable<Response> => {
+        return this._http.delete(this.actionUrl + "delete?id=" + id,
+        )
+            .catch(this.handleError);
+    }
+
     public Add = (itemName: string): Observable<Cliente> => {
         let toAdd = JSON.stringify({ ItemName: itemName });
 
@@ -73,10 +79,7 @@ export class ClienteService {
             .catch(this.handleError);
     }
 
-    public Delete = (id: number): Observable<Response> => {
-        return this._http.delete(this.actionUrl + id)
-            .catch(this.handleError);
-    }
+  
 
     private handleError(error: Response) {
         console.error(error);
