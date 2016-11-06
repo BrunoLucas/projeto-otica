@@ -55,9 +55,16 @@ export class ProdutoService {
             .catch(this.handleError);
     }
 
-    public GetSingle = (id: number): Observable<Produto> => {
-        return this._http.get(this.actionUrl + id)
+    public getSingle = (id: number): Observable<Produto> => {
+        return this._http.get(this.actionUrl + "obterProduto/?id=" + id,
+        new Headers({'Content-Type' : 'application/json', 'Accept' : 'application/json'}))
             .map((response: Response) => <Produto>response.json())
+            .catch(this.handleError);
+    }
+
+      public delete = (id: number): Observable<Response> => {
+        return this._http.delete(this.actionUrl + "delete?id=" + id,
+        )
             .catch(this.handleError);
     }
 

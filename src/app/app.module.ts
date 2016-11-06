@@ -24,6 +24,8 @@ import { NovoFuncionarioComponent } from './novo-funcionario/novo-funcionario.co
 import {SobreComponent} from './sobre/sobre.component';
 import { ContatoComponent } from './contato/contato.component';
 import { AlteraClienteComponent } from './altera-cliente/altera-cliente.component';
+import { AlteraFuncionarioComponent } from './altera-funcionario/altera-funcionario.component';
+import { AlteraProdutoComponent } from './altera-produto/altera-produto.component';
 
 
 const routes: Routes = [
@@ -83,8 +85,23 @@ const routes: Routes = [
    {
     path: 'cliente/deletar-cliente/:id',
     component: AlteraClienteComponent 
+  },
+  {
+    path: 'funcionario/alterar-funcionario/:id',
+    component: AlteraFuncionarioComponent 
+  },
+   {
+    path: 'funcionario/deletar-funcionario/:id',
+    component: AlteraFuncionarioComponent
+  },
+  {
+    path: 'produto/alterar-produto/:id',
+    component: AlteraProdutoComponent 
+  },
+  {
+    path: 'produto/deletar-produto/:id',
+    component: AlteraProdutoComponent
   }
-
 
 ];
 
@@ -104,7 +121,9 @@ const routes: Routes = [
     NovoFuncionarioComponent,
     SobreComponent,
     ContatoComponent,
-    AlteraClienteComponent
+    AlteraClienteComponent,
+    AlteraFuncionarioComponent,
+    AlteraProdutoComponent
     
   ],  
   imports: [

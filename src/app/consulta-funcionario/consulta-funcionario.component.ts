@@ -15,9 +15,9 @@ export class ConsultaFuncionarioComponent implements OnInit {
   public events: any[] = []; 
   listaDeFuncionarios: any = [];
   Funcionario: Funcionario;
-  constructor(private _fb: FormBuilder, private FuncionarioService: FuncionarioService) {
+  constructor(private _fb: FormBuilder, private funcionarioService: FuncionarioService) {
     this.listaDeFuncionarios = [];
-    this.FuncionarioService = FuncionarioService;
+    this.funcionarioService = funcionarioService;
     console.log('Construtor de ConsultaFuncionarioComponent');
     this.Funcionario = new Funcionario();
     this.formFuncionario = _fb.group({
@@ -42,7 +42,7 @@ export class ConsultaFuncionarioComponent implements OnInit {
     console.log(model, isValid);
 
         console.log('consultaFuncionario()');
-     this.FuncionarioService
+     this.funcionarioService
       .listaFuncionariosPorNomeCPF(model)
       .subscribe((data: Funcionario[]) => {
         console.log('consultaFuncionario() ' + data);
@@ -59,10 +59,39 @@ export class ConsultaFuncionarioComponent implements OnInit {
 
   }
 
+  deletarFuncionario(codigo: number) {
+    let result = confirm('deletar: ' + codigo);
+
+    // alert('true ' + result);
+    // alert('false ' + result);
+
+    if (result === true) {
+
+
+      this.submitted = true;
+      console.log('deletarFuncionario()');
+      this.funcionarioService.delete(codigo)
+      .subscribe(() => {
+        console.log('deletarFuncionario() ' + codigo);
+        this.listarFuncionarios();
+        setTimeout(function () {
+          this.cadastrado = false;
+          console.log('delete de funcionario: ' + this.cadastrado);
+          this.formCliente.reset();
+        }.bind(this), 3000);
+
+      },
+        error => console.log(error),
+        () => console.log('Get all Items complete'));
+
+
+    }
+  }
+
   private listarFuncionarios(): void {
 
     console.log('listarFuncionarios()');
-    this.FuncionarioService
+    this.funcionarioService
       .listaFuncionarios()
       .subscribe((data: Funcionario[]) => {
         console.log('listaFuncionarios() ' + data);

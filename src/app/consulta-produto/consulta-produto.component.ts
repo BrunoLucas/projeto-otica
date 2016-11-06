@@ -69,4 +69,29 @@ export class ConsultaProdutoComponent implements OnInit {
       error => console.log(error),
       () => console.log('Get all Items complete'));
   }
+
+    deletarProduto(codigo: number) {
+    let result = confirm('deletar: ' + codigo);
+
+    // alert('true ' + result);
+    // alert('false ' + result);
+
+    if (result === true) {
+
+      console.log('deletarProduto()');
+      this.produtoService.delete(codigo)
+      .subscribe(() => {
+        console.log('deletarProduto() ' + codigo);
+        this.listarProdutos();
+        setTimeout(function () {
+          this.cadastrado = false;
+          console.log('delete de produto: ' + this.cadastrado);
+          this.formCliente.reset();
+        }.bind(this), 3000);
+
+      },
+        error => console.log(error),
+        () => console.log('Get all Items complete'));
+    }
+  }
 }
