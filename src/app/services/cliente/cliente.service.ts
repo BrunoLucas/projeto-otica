@@ -32,13 +32,16 @@ export class ClienteService {
     public listaClientesPorNomeCPF = (cliente : Cliente): Observable<Cliente[]> => {
         let query = '';
         if(cliente.nome != undefined && cliente.nome != null){
-            query = 'nome='+cliente.nome + '&';
+            query = 'nome='+cliente.nome;
+            if(cliente.cpf != undefined && cliente.cpf != null){
+                query += '&cpf=' +cliente.cpf;
+            }
         } 
-        if(cliente.cpf != undefined && cliente.cpf != null){
+        else if(cliente.cpf != undefined && cliente.cpf != null){
             query += 'cpf=' +cliente.cpf;
         }
-        return this._http.get(this.actionUrl + "listaClientesPorNomeCPF?"+query, 
-        new Headers({'Content-Type' : 'application/x-www-form-urlencoded', 'Accept' : 'application/json'}))
+        return this._http.get(this.actionUrl + "listaClientesPorNomeCPF?"+query.trim(), 
+        new Headers({'Content-Type' : 'application/json', 'Accept' : 'application/json'}))
             .map((response: Response) => 
                 <Cliente[]>response.json())
             .catch(this.handleError);
