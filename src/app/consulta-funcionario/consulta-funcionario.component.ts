@@ -46,8 +46,7 @@ export class ConsultaFuncionarioComponent implements OnInit {
       .listaFuncionariosPorNomeCPF(model)
       .subscribe((data: Funcionario[]) => {
         console.log('consultaFuncionario() ' + data);
-
-         this.listaDeFuncionarios =  data ;
+        this.listaDeFuncionarios =  Object.keys(data).map(key => data[key]); //convert in array
         console.log('consultaFuncionario() => ' + this.listaDeFuncionarios);
         for (let i = 0; i < this.listaDeFuncionarios.length; i++) {
           console.log('Funcionario: ' + this.listaDeFuncionarios[i].nome);

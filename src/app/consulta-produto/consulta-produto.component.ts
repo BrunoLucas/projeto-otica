@@ -41,7 +41,7 @@ export class ConsultaProdutoComponent implements OnInit {
       .subscribe((data: Produto[]) => {
         console.log('consultaProduto() ' + data);
 
-         this.listaDeProdutos =  data ;
+        this.listaDeProdutos =  Object.keys(data).map(key => data[key]); //convert in array
         console.log('consultaProduto() => ' + this.listaDeProdutos);
 
       },

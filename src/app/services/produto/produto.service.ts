@@ -35,13 +35,16 @@ export class ProdutoService {
     public listaProdutosPorNomeCodigo = (produto : Produto): Observable<Produto[]> => {
         let query = '';
         if(produto.nome != undefined && produto.nome != null){
-            query = 'nome='+produto.nome + '&';
+            query = 'nome='+produto.nome;
+            if(produto.codigo != undefined && produto.codigo != null){
+                query += '&codigo=' +produto.codigo;
+            }
         } 
-        if(produto.codigo != undefined && produto.codigo != null){
+        else if(produto.codigo != undefined && produto.codigo != null){
             query += 'codigo=' +produto.codigo;
         }
-        return this._http.get(this.actionUrl + "listaProdutosPorNomeCodigo?"+query, 
-        new Headers({'Content-Type' : 'application/x-www-form-urlencoded', 'Accept' : 'application/json'}))
+        return this._http.get(this.actionUrl + "listaProdutosPorNomeCodigo?"+query.trim(), 
+        new Headers({'Content-Type' : 'application/json', 'Accept' : 'application/json'}))
             .map((response: Response) => 
                 <Produto[]>response.json())
             .catch(this.handleError);
