@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CompleterService, CompleterData } from 'ng2-completer';
 
 @Component({
   selector: 'app-consulta-venda',

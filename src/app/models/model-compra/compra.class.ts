@@ -5,7 +5,7 @@ export class Compra {
     dataFim: any;
     quantidadeItens : any;
     valorTotal?: number;
-    codigoCliente: number;
+    cliente: any;
     status: any;
     formaPagamento: number;
 

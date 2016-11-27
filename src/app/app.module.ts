@@ -27,6 +27,8 @@ import { AlteraClienteComponent } from './altera-cliente/altera-cliente.componen
 import { AlteraFuncionarioComponent } from './altera-funcionario/altera-funcionario.component';
 import { AlteraProdutoComponent } from './altera-produto/altera-produto.component';
 
+import { Ng2CompleterModule } from "ng2-completer";
+
 
 const routes: Routes = [
 
@@ -133,6 +135,7 @@ const routes: Routes = [
     AlertModule,
     TabsModule,
     ReactiveFormsModule,
+    Ng2CompleterModule,
     RouterModule.forRoot(
   routes, { useHash: false }
 )
